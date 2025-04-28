@@ -3,14 +3,21 @@
   "version": "1.0.0",
   "description": "Safely parse anything into an Error instance",
   "type": "module",
+  "files": [
+    "dist"
+  ],
   "main": "dist/index.cjs",
   "scripts": {
-    "build": "rollup --config",
+    "bundle": "rollup --config",
+    "types": "tsc",
+    "build": "npm run bundle && npm run types",
+    "prepack": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "unpkg": "./dist/index.umd.js",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     }
@@ -18,6 +25,7 @@
   "author": "everdimension <everdimension@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "rollup": "^4.40.0"
+    "rollup": "^4.40.0",
+    "typescript": "^5.8.3"
   }
 }
