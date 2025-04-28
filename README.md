@@ -1,5 +1,11 @@
 # Get-Error
 
+![npm version](https://img.shields.io/npm/v/get-error.svg)
+![license](https://img.shields.io/npm/l/get-error.svg)
+![bundle size](https://img.shields.io/bundlephobia/minzip/get-error)
+![typescript](https://img.shields.io/badge/TypeScript-ready-blue.svg)
+![tests](https://github.com/everdimension/get-error/actions/workflows/node.js.yml/badge.svg)
+
 Safely parse anything into an Error instance
 
 ## Getting Started
@@ -21,27 +27,7 @@ try {
 }
 ```
 
-#### Handy in building User Interaces
-
-```jsx
-import React from "react";
-import { useQuery } from "@tanstack/react-query";
-
-function App() {
-  const { data, isError, error } = useQuery({
-    queryKey: ["data"],
-    queryFn: async () => {
-      return Promise.reject(new Response(null, { status: 404 }));
-    },
-  });
-
-  if (isError) {
-    // return <p>{error.message}</p> // ❌ NOT safe!
-    return <p>{getError(error).message}</p>; // ✅ Safe!
-  }
-  return <div>{data}</div>;
-}
-```
+That's it!
 
 ## Motivation
 
@@ -88,5 +74,27 @@ try {
   // You'd have to do something like `error.error.message`
   const error = getError(unknownError); // returns Error instance and preserves `code` and `data` fields
   console.log(error.message); // "Method not found"
+}
+```
+
+### Handy in building User Interaces
+
+```jsx
+import React from "react";
+import { useQuery } from "@tanstack/react-query";
+
+function App() {
+  const { data, isError, error } = useQuery({
+    queryKey: ["data"],
+    queryFn: async () => {
+      return Promise.reject(new Response(null, { status: 404 }));
+    },
+  });
+
+  if (isError) {
+    // return <p>{error.message}</p> // ❌ NOT safe!
+    return <p>{getError(error).message}</p>; // ✅ Safe!
+  }
+  return <div>{data}</div>;
 }
 ```
