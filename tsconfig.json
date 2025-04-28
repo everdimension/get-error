@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "allowJs": true, // Allow JavaScript files
-    "checkJs": true, // Type-check JavaScript files
-    "declaration": true, // Generate .d.ts files
-    "emitDeclarationOnly": true, // Only output .d.ts files, no JS output
-    "outDir": "./dist", // Output directory for declarations
-    "target": "ESNext", // Target ECMAScript version
+    "allowJs": true,
+    "checkJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./dist",
+    "target": "ESNext",
     "moduleResolution": "bundler",
     "esModuleInterop": true,
     "strict": true
   },
-  "include": ["index.js"], // Which files to process
+  "include": ["index.js"],
   "exclude": ["node_modules", "dist"]
 }
