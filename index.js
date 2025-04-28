@@ -53,10 +53,9 @@ function fromPrimitiveType(value, fallback) {
   if (value == null) {
     return fallback;
   }
-  const type = typeof value;
-  if (type === "string") {
-    return new Error(type);
-  } else if (Array.isArray(type) || type !== "object") {
+  if (typeof value === "string") {
+    return new Error(value);
+  } else if (Array.isArray(value) || typeof value !== "object") {
     return fallback;
   } else {
     return null;
