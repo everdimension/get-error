@@ -1,7 +1,7 @@
-# Get-Error
+# Get Error
 
 ![npm version](https://img.shields.io/npm/v/get-error.svg)
-![license](https://img.shields.io/npm/l/get-error.svg)
+![license](https://img.shields.io/npm/l/get-error.svg?v=1)
 ![bundle size](https://img.shields.io/bundlephobia/minzip/get-error)
 ![typescript](https://img.shields.io/badge/TypeScript-ready-blue.svg)
 ![tests](https://github.com/everdimension/get-error/actions/workflows/node.js.yml/badge.svg)
