@@ -3,10 +3,21 @@
   "version": "1.0.0",
   "description": "Safely parse anything into an Error instance",
   "type": "module",
-  "main": "index.js",
+  "main": "dist/index.cjs",
   "scripts": {
+    "build": "rollup --config",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "unpkg": "./dist/index.umd.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "author": "everdimension <everdimension@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^4.40.0"
+  }
 }
