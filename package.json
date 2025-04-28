@@ -6,7 +6,7 @@
   "files": [
     "dist"
   ],
-  "main": "dist/index.cjs",
+  "main": "dist/index.js",
   "scripts": {
     "bundle": "rollup --config",
     "types": "tsc",
@@ -17,7 +17,6 @@
   "unpkg": "./dist/index.umd.js",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     }
